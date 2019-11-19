@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheeåt" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Restful Tasks API</title>
+</head>
+<body>
+    <div>
+        <h3>This is our second example of building a simple API server with an interactive interface.</h3>
+        <form action = "/tasks" method = "post">
+            <h2>Create a new task:</h2>
+            <table>
+                <tr>
+                    <td><h4>Title:</h4></td>
+                    <td><input type="textarea" name="name" id="title"></td>
+                </tr>
+                <tr>
+                    <td><h4>Description:</h4></td>
+                    <td><input type="textarea" name="age" id="description"></td>
+                </tr>
+            </table>
+            <button type="submit" name="submit" id="submit">Submit</button> 
+        </form>
+    </div>
+    <h3>All Tasks:</h3>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+        <% for (var task of all_tasks) { %>
+            <tr>
+                <td><%= task.title %></td>
+                <td><%= task.description %></td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>
